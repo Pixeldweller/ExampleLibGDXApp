@@ -1,11 +1,15 @@
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.mygdx.game.ui.example.ConfigScreen;
 
 public class GameTest extends Game {
 	
 	public static float WIDTH;
 	public static float HEIGHT;
+	private static float CENTER_X;
+	private static float CENTER_Y;
 	
 	
 	@Override
@@ -13,8 +17,8 @@ public class GameTest extends Game {
 		WIDTH = 864;
 		HEIGHT = 486;
 		
-		setScreen(new EngineTests());
-//		setScreen(new PrototypeCombatScreen());
+//		setScreen(new EngineTests());
+		setScreen(new ConfigScreen());
 	}
 	
 	public void dispose()
@@ -37,6 +41,21 @@ public class GameTest extends Game {
 	public void resume()
 	{super.resume();}
 
-	public void resize(int width, int height)
-	{super.resize(width, height);}
+	@Override
+	public void resize(int width, int height) {
+		super.resize(width, height);
+		WIDTH = Gdx.graphics.getWidth();
+		HEIGHT = Gdx.graphics.getHeight();
+		CENTER_X = WIDTH / 2f;
+		CENTER_Y = HEIGHT / 2f;
+	}
+
+	
+	public static float centerX() {
+		return CENTER_X;
+	}
+
+	public static float centerY() {
+		return CENTER_Y;
+	}
 }
