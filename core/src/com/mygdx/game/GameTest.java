@@ -17,8 +17,8 @@ public class GameTest extends Game {
 		WIDTH = 864;
 		HEIGHT = 486;
 		
-//		setScreen(new EngineTests());
-		setScreen(new ConfigScreen());
+		setScreen(new EngineTests());
+		//setScreen(new ConfigScreen());
 	}
 	
 	public void dispose()
